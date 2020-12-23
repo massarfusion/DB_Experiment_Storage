@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="SimpleHotel.OrderARoom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleHotel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="inputPrompt">
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="45"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="navBtnStyle" >
+            <Setter Property="Background"   Value="Black"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="BorderThickness" Value="0,0,1,0"></Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" x:Name="province" SelectionChanged="province_SelectionChanged" ItemsSource="{x:Bind provSel}"></ListBox>
+            <ListBox Grid.Column="1" x:Name="city" SelectionChanged="city_SelectionChanged" ItemsSource="{x:Bind citySel}"></ListBox>
+            <ListBox Grid.Column="2" x:Name="district" SelectionChanged="district_SelectionChanged" ItemsSource="{x:Bind distSel}"></ListBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource inputPrompt}" Grid.Column="0">价位选择</TextBlock>
+                <Slider Value="200" x:Name="moneySlider" Maximum="3000" Minimum="1" 
+                        VerticalAlignment="Center" Grid.Column="1" Margin="0,0,20,0"></Slider>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource inputPrompt}" Grid.Column="0">出租类型</TextBlock>
+                <ComboBox VerticalAlignment="Center"  x:Name="rentType" ItemsSource="{x:Bind rentInfo}"
+                          Grid.Column="1"></ComboBox>
+                
+            </Grid>
+            
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource inputPrompt}" Grid.Column="0">最低星级</TextBlock>
+                <Slider Maximum="5.0" Minimum="3.0" VerticalAlignment="Center" 
+                        StepFrequency="0.1" Grid.Column="1" Margin="0,0,20,0"
+                        Name="minStars" Value="4.5"></Slider>
+            </Grid>
+            <Grid Grid.Row="3">
+                
+                <Button x:Name="submitRoomQuery" Grid.Column="0" Style="{StaticResource navBtnStyle}" Background="#1F97E4" Click="submitRoomQuery_Click">
+                    <StackPanel>
+                        <TextBlock Text="提交" FontSize="36"></TextBlock>
+                        
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

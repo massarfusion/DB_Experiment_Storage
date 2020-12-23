@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="SimpleHotelHost.AccessOrderedRoom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:models="using:SimpleHotelHost.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <ListView Name="InventoryList"
+                  HorizontalAlignment="Stretch"
+                  SelectionMode="Single"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.IsVerticalRailEnabled="True"
+                  ScrollViewer.VerticalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.IsHorizontalRailEnabled="True"
+                  Margin="20"
+                  >
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="发布时间" Margin="8,0" Width="180" Foreground="DarkRed" />
+                        <TextBlock Text="状态" Width="180" Foreground="DarkRed" />
+                        <TextBlock Text="位置" Width="400" Foreground="DarkRed" />
+                        <TextBlock Text="房间名" Width="400" Foreground="DarkRed" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:DisplayOrder">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Name="ItemId"
+                                    Text="{x:Bind issuedTime}"
+                                    Width="180" />
+                        <TextBlock Name="ItemName"
+                                    Text="{x:Bind status}"
+                                    Width="180" />
+                        <TextBlock Text="{x:Bind locationDetail}"
+                                   Width="400" />
+                        <TextBlock Text="{x:Bind roomName}"
+                                   Width="400" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

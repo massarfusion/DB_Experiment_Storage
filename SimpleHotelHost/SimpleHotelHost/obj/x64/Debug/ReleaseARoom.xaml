@@ -1,0 +1,102 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="SimpleHotelHost.ReleaseARoom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleHotelHost"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="navBtnStyle" >
+            <Setter Property="Background"   Value="Black"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="BorderThickness" Value="0,0,1,0"></Setter>
+        </Style>
+        <Style TargetType="Image"   x:Key="iconType" >
+            <Setter Property="Height"   Value="20"></Setter>
+            <Setter Property="Width" Value="20"></Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListBox x:ConnectionId='12' Grid.Column="0" x:Name="province"                                                                            ></ListBox>
+            <ListBox x:ConnectionId='13' Grid.Column="1" x:Name="city"                                                                        ></ListBox>
+            <ListBox x:ConnectionId='14' Grid.Column="2" x:Name="district"                                                                            ></ListBox>
+        </Grid>
+
+        <Grid Grid.Row="1" BorderThickness="2" BorderBrush="Black">
+            <TextBox x:ConnectionId='11'  PlaceholderText="是在本区的什么街道?几号?"  x:Name="dtl"
+                      MaxLength="50" FontSize="30"  VerticalAlignment="Stretch"   
+                      HorizontalAlignment="Stretch"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <RelativePanel>
+                <TextBlock x:ConnectionId='8' x:Name="prmpt1" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"
+                           FontSize="30">人数上限？</TextBlock>
+                <TextBox x:ConnectionId='9' RelativePanel.RightOf="prmpt1" 
+                         FontSize="30" Width="200" 
+                         PlaceholderText="↓" x:Name="gstNumSum"
+                                                        
+                            ></TextBox>
+                <TextBlock x:ConnectionId='10' x:Name="gstNumWarn" RelativePanel.AlignRightWithPanel="True" 
+                           RelativePanel.AlignVerticalCenterWithPanel="True"
+                           FontSize="60" Foreground="Red"></TextBlock>
+            </RelativePanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <RelativePanel>
+                <TextBlock x:ConnectionId='5' x:Name="prmpt2" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"
+                           FontSize="30">您的定价？</TextBlock>
+                <TextBox x:ConnectionId='6' RelativePanel.RightOf="prmpt2"
+                         FontSize="30" Width="200" 
+                         PlaceholderText="↓" x:Name="priceNum"
+                                                       
+                           ></TextBox>
+                <TextBlock x:ConnectionId='7' x:Name="unitPriceWarn2" RelativePanel.AlignRightWithPanel="True" 
+                           RelativePanel.AlignVerticalCenterWithPanel="True"
+                           FontSize="60" Foreground="Red"></TextBlock>
+            </RelativePanel>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <TextBox x:ConnectionId='4' Header="给您的房间来一个名字！" Name="rName" MaxLength="200"
+                     PlaceholderText="举例：3号南京南/卡子门地铁口温馨民宿 独卫带阳台">
+                
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="5">
+            <TextBox x:ConnectionId='3' Header="详细介绍您的房间！" x:Name="rIntro" MaxLength="200"
+                     PlaceholderText="举例：房源位于**大学旁边****商圈之中，周边设施配套齐全，楼下有美味可口的美食！超大的落地窗，远望夜景！">
+
+            </TextBox>
+        </Grid>
+        
+            <Button x:ConnectionId='2' x:Name="submitAttempt" Grid.Row="6" Style="{StaticResource navBtnStyle}" Background="#FF7582"                             >
+                <StackPanel>
+                    <TextBlock Text="提交" FontSize="36"></TextBlock>
+                </StackPanel>
+            </Button>
+        
+    </Grid>
+</Page>
+

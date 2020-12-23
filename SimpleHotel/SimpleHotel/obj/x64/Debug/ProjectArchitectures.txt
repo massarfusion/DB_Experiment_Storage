@@ -1,0 +1,1 @@
+C:\Users\Yito Wang\source\repos\SimpleHotel\SimpleHotel\SimpleHotel.csproj;x64

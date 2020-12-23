@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="SimpleHotel.AccessWallet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleHotel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="txt">
+            <Setter Property="FontSize" Value="60"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height='3*'></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{StaticResource txt}" Grid.Row="1" Grid.Column="0">余额</TextBlock>
+        <TextBlock x:ConnectionId='2' Style="{StaticResource txt}" Grid.Row="1" Grid.Column="1" Name="balanceArea"></TextBlock>
+        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                Grid.Row="1" Grid.Column="2" 
+                Background="#1F97E4" FontSize="75" 
+                FontFamily="Segoe MDL2 Assets" Content="&#xE7bf;"
+                Foreground="White"></Button>
+    </Grid>
+</Page>
+

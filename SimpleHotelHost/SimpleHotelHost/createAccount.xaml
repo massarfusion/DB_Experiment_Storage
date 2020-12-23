@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="SimpleHotelHost.createAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleHotelHost"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="welcomeBtn">
+
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="FontSize" Value="45"></Setter>
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="BorderThickness" Value="0,0,2,0"></Setter>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="warnings">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="nicknameInput" Grid.Row="0" Height="65"  Header="给自己起一个昵称吧!" PlaceholderText="昵称" Margin="20,0,20,0" MaxLength="50" ></TextBox>
+            <TextBlock x:Name="nicknameWarning" Grid.Row="0" Grid.Column="1"  Style="{StaticResource warnings}"></TextBlock>
+            
+            <TextBlock Style="{StaticResource warnings}" Grid.Column="1" Grid.Row="1"></TextBlock>
+
+            <TextBox x:Name="passwordInput" Grid.Row="1" Height="65"  Header="您的密码" PlaceholderText="五十个字符以内，只能包含字母数字下划线" MaxLength="50" Margin="20,0,20,0"  ></TextBox>
+            <TextBlock x:Name="pwdWarning" Grid.Row="1" Grid.Column="1"  Style="{StaticResource warnings}"></TextBlock>
+
+            <TextBox x:Name="realNameInput" Grid.Row="2" Height="65"  Header="您的真实姓名" PlaceholderText="在这里" Margin="20,0,20,0" MaxLength="50" ></TextBox>
+            
+
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{StaticResource welcomeBtn}" Content="检查递交" Click="Button_Click">
+
+            </Button>
+            <Button Grid.Column="1" Style="{StaticResource welcomeBtn}" Content="返回" x:Name="returnER" Click="returnER_Click" >
+
+            </Button>
+        </Grid>
+
+
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Yito Wang\\source\\repos\\SimpleHotelHost\\SimpleHotelHost\\SimpleHotelHost.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Yito Wang\\source\\repos\\SimpleHotelHost\\SimpleHotelHost\\SimpleHotelHost.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Yito Wang\\source\\repos\\SimpleHotelHost\\SimpleHotelHost\\SimpleHotelHost.csproj",
+        "projectName": "SimpleHotelHost",
+        "projectPath": "C:\\Users\\Yito Wang\\source\\repos\\SimpleHotelHost\\SimpleHotelHost\\SimpleHotelHost.csproj",
+        "packagesPath": "C:\\Users\\Yito Wang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yito Wang\\source\\repos\\SimpleHotelHost\\SimpleHotelHost\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Yito Wang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.16299"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.16299": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.16299": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.10, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
